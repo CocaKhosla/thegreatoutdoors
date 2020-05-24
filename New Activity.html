@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Create New Challenge</title>
+	<link rel="stylesheet" type="text/css" href="FormCSS.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+	<script src="New Activity JS.js"></script>
+</head>
+<body>
+	<h1>The Great Outdoors</h1>
+	<h4>Create New Event</h4>
+
+	<form action="The Great Outdoors.html" onsubmit="MyFunction()"> 
+		<div>
+			<label for="title">Title</label><br>
+			<input type="text" id="title" name="title" size="50"><br><br>
+		</div>
+		
+
+		<div>
+			<label for="Description">Description</label><br>
+			<textarea name="Description" id="Description" rows="5" cols="50"></textarea><br><br>
+		</div>
+
+		<div>
+			<label for="Date">Date</label><br>
+			<input type="date" name="Date" id="Date"><br><br>
+		</div>
+
+		<div>
+			<label for="StartTime">Start Time</label><br>
+			<input type="time" id="StartTime" name="StartTime"></input><br><br>
+		</div>
+
+		<div>
+			<label for="EndTime">End Time</label><br>
+			<input type="time" id="EndTime" name="EndTime"></input><br><br>
+		</div>
+
+		<div>
+			<label for="MeetingArea">Meeting Area</label><br>
+			<textarea name="MeetingArea" id="MeetingArea" rows="2" cols="50"></textarea><br><br>
+		</div>
+
+		<div>
+			<label for="ContactUs">Where to Contact Us</label><br>
+			<textarea name="ContactUs" id="ContactUs" rows="2" cols="50"></textarea><br><br>
+		</div>
+
+		<div>
+			<label for="Image">Enter Image URL</label><br>
+			<input type="URL" name="url" id="url"><br><br>
+		</div>
+		
+		<div>
+			<input type="submit" name="Submit" id="Submit">
+		</div>
+
+	</form>
+	<p id="lol"></p>
+</body>
+</html>
