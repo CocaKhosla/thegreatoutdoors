@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>The Great Outdoors</title>
+	<link rel="stylesheet" type="text/css" href="Outdoor Css.css">
+	<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet"></head>
+<body>
+
+
+<div class="Create">
+	<a href="New Activity.html">Create New Activity</a>
+</div>
+
+<div class="Login">
+	<a href="Login.html">Dashboard</a>
+</div>
+<h1>The Great Outdoors</h1>
+
+<h4>Upcoming Events</h4>
+
+<div class="stuffcontain">
+<div class="box">
+	<p><img src="https://www.adventurecycling.org/sites/default/assets/Image/Development/Appeals/s1_CHaney_Adv%20Cycl%20Shoot%2009_056.jpg"><span class="title">Cycling Trail</span><span class="Description"><span class="text">A scenic ride through the wilderness of the Aravali Mountains</span></span><span class="Date">Date: <span class="text">1st June, 2020</span></span><span class="Timings">Timings: <span class="text">7:30 a.m to 10:30 a.m</span></span><span class="MeetingArea">Meeting Area: <span class="text">Aravali Entrance</span></span><span class="ContactUs">Contact Us: <span class="text">Our Discord channel: randomdiscord</span></span></p>
+</div>
+
+<button name='join' class="join" value="Join" onclick="myClick1()" id="join1">Join</button>
+
+<div class="box">
+	<p><img src="https://drop.ndtv.com/albums/NEWS/tree-plantation-in-india/tree-plantation-in-india-green-yatra.jpg"><span class="title">Tree Plantation Drive</span><span class="Description"><span class="text">Plantation Drive hosted by the most Trees4Us Campaign. Tree plantation will be followed by sports and team building activities</span></span><span class="Date">Date: <span class="text">2nd June, 2020</span></span><span class="Timings">Timings: <span class="text">7:30 a.m to 12 p.m</span></span><span class="MeetingArea">Meeting Area: <span class="text">Biodiversity Park, Gurgaon</span></span><span class="ContactUs">Contact Us: <span class="text">Our Discord channel: Trees4Us</span></span></p>
+</div>
+<button name ='join' class="join" value="Join" id='join2' onclick="myClick2()">Join</button>
+</div>
+
+
+<script>
+	var queryString = location.search.substring(1);
+	console.log(queryString);
+	var dividedString = queryString.split('&');
+	console.log(dividedString);
+	var i;
+	
+	var reqValueTitle = dividedString[0];
+	console.log(reqValueTitle);
+	var titleSplit = reqValueTitle.split('=');
+	var title = decodeURIComponent(titleSplit[1]);
+	title = title.split('+').join(' ');
+	console.log(title);
+
+
+	var reqValueDescription = dividedString[1];
+	console.log(reqValueDescription);
+	var descriptionSplit = reqValueDescription.split('=');
+	var description = decodeURIComponent(descriptionSplit[1]);
+	description = description.split('+').join(' ');
+	console.log(description);
+
+	var reqValueDate = dividedString[2];
+	console.log(reqValueDate);
+	var dateSplit = reqValueDate.split('=');
+	var date = dateSplit[1];
+	console.log(date);
+
+	var reqValueStart = dividedString[3];
+	console.log(reqValueStart);
+	var startSplit = reqValueStart.split('=');
+	var start = decodeURIComponent(startSplit[1]);
+	console.log(start);	
+
+	var reqValueEnd = dividedString[4];
+	console.log(reqValueEnd);
+	var endSplit = reqValueEnd.split('=');
+	var end = decodeURIComponent(endSplit[1]);
+	console.log(end);	
+
+
+	var reqValueMeeting = dividedString[5];
+	console.log(reqValueMeeting);
+	var meetingSplit = reqValueMeeting.split('=');
+	var meeting = decodeURIComponent(meetingSplit[1]);
+	meeting = meeting.split('+').join(' ');
+	console.log(meeting);
+
+	var reqValueContact = dividedString[6];
+	console.log(reqValueContact);
+	var contactSplit = reqValueContact.split('=');
+	var contact = decodeURIComponent(contactSplit[1]);
+	contact = contact.split('+').join(' ');
+	console.log(contact);	
+
+	var reqValuePhoto = dividedString[7];
+	console.log(reqValuePhoto);
+	var photoSplit = reqValuePhoto.split('=');
+	var photo = decodeURIComponent(photoSplit[1]);
+
+	var ctr1 = 0;
+	var ctr2 = 0;
+	var ctr3 = 0;
+
+
+	const button = document.createElement('BUTTON');
+
+	button.classList.add('join');
+
+	button.id = 'join3';
+
+	button.innerHTML = 'Join';
+
+	document.querySelector('.stuffcontain').prepend(button);
+
+	function outputMessage(title, description, date, start, end, meeting, contact, photo){
+		const div = document.createElement('div');
+
+		div.classList.add('box');
+
+		div.innerHTML = `<p><img src="${photo}"><span class="title">${title}</span><span class="Description"><span class="text">${description}</span></span><span class="Date">Date: <span class="text">${date}</span></span><span class="Timings">Timings: <span class="text">${start} to ${end}</span></span><span class="MeetingArea">Meeting Area: <span class="text">${meeting}</span></span><span class="ContactUs">Contact Us: <span class="text">${contact}</span></span></p>`
+
+		
+
+		document.querySelector('.stuffcontain').prepend(div);
+	}
+
+	function myClick1(){
+		if (ctr1 % 2 == 0)
+		{
+			document.getElementById('join1').innerHTML = 'Joined';		
+		}
+		else
+			document.getElementById('join1').innerHTML = 'Join';
+		ctr1 = ctr1 + 1;
+	}
+
+	function myClick2(){
+		if (ctr2 % 2 == 0)
+		{
+			document.getElementById('join2').innerHTML = 'Joined';		
+		}
+		else
+			document.getElementById('join2').innerHTML = 'Join';
+		ctr2 = ctr2 + 1;
+	}
+
+	button.onclick = function(){
+		if (ctr3 % 3 == 0)
+		{
+			document.getElementById('join3').innerHTML = 'Joined';		
+		}
+		else
+			document.getElementById('join3').innerHTML = 'Join';
+		ctr3 = ctr3 + 1;
+	}
+
+
+	outputMessage(title, description, date, start, end, meeting, contact , photo);
+
+	
+</script>
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+
+</body>
+</html>
